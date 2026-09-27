@@ -76,3 +76,11 @@ export const Content: React.FC<ContentProps> = ({ searchQuery }) => {
     </div>
   );
 }
+
+// const reactionsByCharacter = new Map();
+
+// reactions.forEach(reaction => {
+//   const existing = reactionsByCharacter.get(reaction.characterId) ?? [];
+//   existing.push(reaction);
+//   reactionsByCharacter.set(reaction.characterId, existing);
+// });

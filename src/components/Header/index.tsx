@@ -30,6 +30,10 @@ export const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     onSearch('');
   };
 
+  // IMPROVEMENT: Potential duplicate search when Enter is pressed before the debounce timer expires.
+  // Also check handleClear for potential duplication.
+  // Making the debounce cancellable or centralizing the search trigger
+
   return (
     <header className={styles.header}>
 
