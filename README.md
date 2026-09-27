@@ -11,9 +11,7 @@ The application retrieves data from a local mock API and renders a searchable, p
 - Shows a pagination system at the bottom of the page to browse through more results.
 - Fetches each character's reactions from a second API endpoint and displays them alongside the character.
 
-### Mockup
-
-Low fidelity mockup of the application:
+### Screenshot
 
 Each result displays:
 - Character's image
@@ -23,7 +21,7 @@ Each result displays:
 
 The Pagination component is present at the bottom of the page.
 
-![App mockup](design.png)
+![App screenshot](src/assets/projectStarWars1.png)
 
 ## Stack
 

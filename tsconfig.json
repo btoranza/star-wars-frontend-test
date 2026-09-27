@@ -11,8 +11,7 @@
         "strict": true,
         "skipLibCheck": true,
         "target": "ES2018",
-        "types": ["jest", "gapi", "google.picker"],
-        "downlevelIteration": true
+        "types": ["jest", "gapi", "google.picker"]
     },
     "include": [
         "src",
