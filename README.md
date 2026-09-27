@@ -1,5 +1,7 @@
 # Star Wars Frontend Test
 
+**Live demo:** https://star-wars-frontend-test-hazel.vercel.app/
+
 ## Introduction
 
 A small frontend application that lists Star Wars characters, built with React and TypeScript.
