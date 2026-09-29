@@ -104,6 +104,10 @@ $image-size-mobile: 100%;
         border: 1px solid var(--color-surface-alt);
         font-size: 1.1rem;
 
+        &.reactionActive {
+          border-color: var(--color-accent);
+        }
+
         .reactionCount {
           font-size: 0.75rem;
           color: var(--color-text-secondary);

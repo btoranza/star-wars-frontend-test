@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button, Chip, ColorPalette, Theme } from '@lumx/react';
+import { Button, ButtonEmphasis, Chip, ColorPalette, Theme } from '@lumx/react';
 
 import { Character, Reaction } from '../../types';
 
@@ -15,12 +15,12 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
   character,
   reactions,
 }) => {
-  const [emojiCount, setEmojiCount] = useState<Record<string, number>>({});
+  const [activeEmojis, setActiveEmojis] = useState<Record<string, boolean>>({});
 
   const onClickReaction = (emoji: string) => {
-    setEmojiCount(prev => ({
+    setActiveEmojis(prev => ({
       ...prev,
-      [emoji]: (prev[emoji] || 0) + 1,
+      [emoji]: !prev[emoji],
     }));
   };
 
@@ -90,14 +90,16 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({
         {Object.keys(groupedReactions).length > 0 && (
           <div className={styles.reactions}>
             {Object.entries(groupedReactions).map(([emoji, count]) => {
-              const addedCount = emojiCount[emoji] || 0;
-              const totalCount = count + addedCount;
+              const isActive = !!activeEmojis[emoji];
+              const totalCount = count + (isActive ? 1 : 0);
 
               return (
                 <Button
                   key={emoji}
-                  className={styles.reaction}
+                  className={`${styles.reaction} ${isActive ? styles.reactionActive : ''}`}
+                  emphasis={isActive ? ButtonEmphasis.high : ButtonEmphasis.low}
                   onClick={() => onClickReaction(emoji)}
+                  aria-pressed={isActive}
                 >
                   {emoji}
                   {totalCount > 1 && (

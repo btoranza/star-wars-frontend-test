@@ -1,5 +1,29 @@
 .pagination {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: 4px;
+
+  @media (max-width: 600px) {
+    flex-wrap: nowrap;
+    gap: 2px;
+  }
+
+  .pageButton {
+    min-width: 36px;
+
+    @media (max-width: 600px) {
+      min-width: 32px;
+      padding: 0 8px;
+    }
+  }
+
+  .dots {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    color: var(--color-text-secondary);
+  }
 }
